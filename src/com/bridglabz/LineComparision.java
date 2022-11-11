@@ -7,30 +7,23 @@ public class LineComparision {
 
 		System.out.println("Welcome to Line Comparision Computation Program\n\n");
 
-		System.out.println("Enter points for first line:");
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter point x1: ");
-		int x1 = sc.nextInt();
-		System.out.println("Enter point y1: ");
-		int y1 = sc.nextInt();
-		System.out.println("Enter point x2: ");
-		int x2 = sc.nextInt();
-		System.out.println("Enter point y2: ");
-		int y2 = sc.nextInt();
-		Double length1 = Math.sqrt((Math.pow((x2 - x1), 2)) + (Math.pow((y2 - y1), 2)));
-		System.out.println("Length of first line: " + length1);
+		Scanner scanner = new Scanner(System.in);
 
-		System.out.println("\nEnter points for second line:");
-		System.out.println("Enter point x3: ");
-		int x3 = sc.nextInt();
-		System.out.println("Enter point y3: ");
-		int y3 = sc.nextInt();
-		System.out.println("Enter point x4: ");
-		int x4 = sc.nextInt();
-		System.out.println("Enter point y4: ");
-		int y4 = sc.nextInt();
-		Double length2 = Math.sqrt((Math.pow((x4 - x3), 2)) + (Math.pow((y4 - y3), 2)));
-		System.out.println("Length of second line is: " + length2);
+		System.out.println("enter values for x1,y1 and x2,y2 of line1");
+		Point p1 = new Point(scanner.nextInt(), scanner.nextInt());
+		Point p2 = new Point(scanner.nextInt(), scanner.nextInt());
+		Line line1 = new Line(p1, p2);
+		Float length1 = line1.getLength();
+
+		System.out.println("enter values for x1,y1 and x2,y2 of line2");
+		Point p3 = new Point(scanner.nextInt(), scanner.nextInt());
+		Point p4 = new Point(scanner.nextInt(), scanner.nextInt());
+		Line line2 = new Line(p3, p4);
+		Float length2 = line2.getLength();
+
+		System.out.println("Length of line1 = " + length1);
+		System.out.println("Length of line2 = " + length2);
+
 		System.out.println();
 
 		int result = length2.compareTo(length1);
